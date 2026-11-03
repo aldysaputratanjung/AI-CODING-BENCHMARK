@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "nexus-kernel",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-06-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "durable_objects": {
+    "bindings": [{ "name": "NEXUS_AGENT", "class_name": "NexusAgent" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["NexusAgent"] }],
+  "observability": { "enabled": true },
+  "alias": { "ai": "ai" }
+}

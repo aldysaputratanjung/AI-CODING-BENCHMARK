@@ -1,0 +1,47 @@
+{
+  "name": "saas-analytics-platform",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:integration": "vitest run --config vitest.config.integration.ts",
+    "deploy": "npm run build && wrangler deploy",
+    "db:migrate:local": "wrangler d1 migrations apply saas-analytics-db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply saas-analytics-db --remote"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.59.0",
+    "hono": "^4.6.0",
+    "lucide-react": "^0.454.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.53.0",
+    "react-router-dom": "^6.27.0",
+    "recharts": "^2.13.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.0.0",
+    "@cloudflare/vitest-pool-workers": "^0.8.0",
+    "@cloudflare/workers-types": "^4.20250224.0",
+    "@hookform/resolvers": "^3.9.0",
+    "@testing-library/react": "^16.0.0",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.13.0",
+    "typescript": "^5.6.3",
+    "vite": "^7.1.0",
+    "vitest": "^3.2.0",
+    "wrangler": "^3.95.0",
+    "tailwindcss": "^3.4.14",
+    "postcss": "^8.4.47",
+    "jsdom": "^25.0.0"
+  }
+}

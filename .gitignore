@@ -1,0 +1,6 @@
+dist/client/
+dist/saas_analytics_platform/
+node_modules/
+.wrangler/
+.env
+.dev.vars
